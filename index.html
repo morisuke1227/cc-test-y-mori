@@ -36,9 +36,15 @@
       }
     })
     .then(data => {
+      
+　　　 const imageUrl = JSON.parse(data.body).presigned_url;
+      displayImage(imageUrl);
+      document.getElementById('loadingText').style.display = 'none';
+　　　/*
       const imageUrl = data.body.presigned_url;
       displayImage(imageUrl);
       document.getElementById('loadingText').style.display = 'none';
+      */
     })
     .catch(error => {
       alert('API呼び出しエラー！　もう一度index.htmlを見直してみてください。');
